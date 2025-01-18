@@ -97,7 +97,62 @@ For more information:
 - Visit the [Angular CLI Overview and Command Reference](https://angular.io/cli).
 - Refer to the [Spring Boot Documentation](https://spring.io/projects/spring-boot).
 
+# Fixing PowerShell Execution Policy Error
+
+If you encounter an error while running Angular commands in PowerShell, such as:
+
+```
+File C:\Users\<User>\AppData\Roaming\npm\ng.ps1 cannot be loaded because running scripts is disabled on this system.
+```
+
+This error occurs due to PowerShell's execution policy settings. Here's how you can fix it.
+
 ---
+
+## Solution
+
+### 1. Open PowerShell in Administrator Mode
+- Search for "PowerShell" in the Windows search bar.
+- Right-click on **Windows PowerShell** and select **Run as Administrator**.
+
+### 2. Change the Execution Policy
+Run the following command in the PowerShell terminal:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+
+- When prompted for confirmation, type `Y` and press `Enter`.
+
+### 3. Retry Your Angular Command
+- Return to your project directory in Visual Studio Code or any terminal.
+- Run the Angular development server command again:
+
+```bash
+ng serve
+```
+
+---
+
+## Alternative Temporary Fix
+If you prefer not to change the execution policy permanently, you can bypass it for the current session:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+This change is temporary and will reset when you close the PowerShell session.
+
+---
+
+## Notes
+- The execution policy change is safe when using trusted scripts.
+- Always be cautious and avoid running scripts from unknown sources.
+
+For more information about PowerShell execution policies, visit the official documentation:
+[Microsoft PowerShell Execution Policies](https://go.microsoft.com/fwlink/?LinkID=135170).
+
+
 
 
 
