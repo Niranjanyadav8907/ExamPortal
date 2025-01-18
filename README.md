@@ -88,7 +88,6 @@ The backend of the ExamPortal project is built using **Spring Boot**. It provide
 | Spring Security  | Authentication and security |
 
 ### Language Tool Image
-![Language Tools](https://upload.wikimedia.org/wikipedia/commons/8/8e/Spring-Boot-Logo.svg)
 
 ---
 
@@ -100,5 +99,5 @@ For more information:
 
 ---
 
-Feel free to contribute to this project by raising issues or submitting pull requests on GitHub!
+
 
